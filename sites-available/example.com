@@ -26,7 +26,12 @@ server {
   server_name example.com;
 
   # Path for static files
-  root /sites/example.com/public;
+  root /opt/example.com;
+
+  # Allow search engines
+  location /robots.txt {
+    return 200 "User-agent: *\nAllow: /";
+  }
 
   #Specify a charset
   charset utf-8;
