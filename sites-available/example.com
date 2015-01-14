@@ -26,6 +26,21 @@ server {
   # Path for static files
   root /opt/example.com;
 
+  # try all request combinations including attempting to append .html
+  location / {
+    try_files $uri $uri/ @htmlext;
+  }
+
+  # try all requests with .html suffix 
+  location ~ \.html$ {
+    try_files $uri =404;
+  }
+
+  # Rewrite URLS missing a suffix to .html
+  location @htmlext {
+    rewrite ^(.*)$ $1.html last;
+  }
+
   # Allow search engines
   location /robots.txt {
     return 200 "User-agent: *\nAllow: /";
