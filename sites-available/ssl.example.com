@@ -36,7 +36,7 @@ server {
   include h5bp/directive-only/ssl.conf;
 
   # Path for static files
-  root /var/www/example.com/public;
+  root /opt/example/current;
 
   #Specify a charset
   charset utf-8;
