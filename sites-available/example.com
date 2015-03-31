@@ -26,7 +26,7 @@ server {
   server_name example.com;
 
   # Path for static files
-  root /opt/example.com;
+  root /opt/example/current;
 
   # try all request combinations including attempting to append .html
   location / {
