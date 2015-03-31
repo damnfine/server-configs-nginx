@@ -5,10 +5,10 @@ server {
   listen 80;
 
   # The host name to respond to
-  server_name staging.example.com;
+  server_name alpha.example.com;
 
   # Path for static files
-  root /opt/staging/example.com;
+  root /opt/alpha/example.com/current;
 
   # try all request combinations including attempting to append .html
   location / {
